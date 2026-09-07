@@ -1,18 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const allProducts = await getCollection('products');
-const featured = allProducts.filter((p) => p.data.featured);
-const show = featured.length > 0 ? featured.slice(0, 6) : allProducts.slice(0, 6);
 ---
-<Layout title="Tars Home | 首页">
-  <h1>Tars Home</h1>
-  <p>法式中国风家具与家居装饰 · 手工工艺 · 定制服务</p>
-  <h2>精选商品</h2>
-  {show.length > 0 ? (
+<Layout title="全部商品 | Tars Home">
+  <h1>全部商品</h1>
+  {allProducts.length > 0 ? (
     <div class="product-grid">
-      {show.map((p) => (
+      {allProducts.map((p) => (
         <a class="product-card" href={`/products/${p.slug}/`}>
           <img src={p.data.image} alt={p.data.title} loading="lazy" />
           <h3>{p.data.title}</h3>
