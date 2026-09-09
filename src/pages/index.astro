@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { existsSync } from 'node:fs';
 
 const allProducts = await getCollection('products');
 const featured = allProducts.filter((p) => p.data.featured);
@@ -12,11 +11,7 @@ const catNames = {
   'living-room': 'Living Room', 'dining-room': 'Dining Room', 'bedroom': 'Bedroom',
   'study': 'Study', 'console-hall': 'Console & Hall', 'home-decoration': 'Home Decoration',
 };
-const catImage = (slug) => {
-  const file = `public/images/category/${slug}.jpg`;
-  if (existsSync(file)) return `/images/category/${slug}.jpg`;
-  return allProducts.find((p) => p.data.categorySlug === slug)?.data.image ?? '/images/products/default.jpg';
-};
+const catImage = (slug) => `/images/category/${slug}.jpg`;
 ---
 <Layout title="Tars Home | Luxury French-Chinese Furniture">
 
