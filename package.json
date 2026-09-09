@@ -12,9 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.1"
+    "astro": "^7.3.1",
+    "@pagefind/astro": "^1.0.0"
   },
   "allowScripts": {
-    "esbuild": true
+    "esbuild": true,
+    "@pagefind/astro": true
   }
 }

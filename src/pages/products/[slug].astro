@@ -13,28 +13,24 @@ export async function getStaticPaths() {
 const { product } = Astro.props;
 const { Content } = await render(product);
 
-// WhatsApp 询盘号码(国家码+号码)
 const phone = '8617336031842';
-const waMsg = `I want to inquire about ${product.data.title}`;
+const waMsg = `I want to inquire about ${product.data.title} (SKU: ${product.id})`;
 const waLink = `https://api.whatsapp.com/send/?phone=${phone}&text=${encodeURIComponent(waMsg)}`;
 ---
 <Layout title={product.data.title}>
-  <p><a href="/products/">← 返回全部商品</a></p>
+  <p><a href="/products/">&#8592; Back to all products</a></p>
   <img src={product.data.image} alt={product.data.title} />
   <h1>{product.data.title}</h1>
-  <p>分类:{product.data.category}</p>
+  <p>Category: <a href={`/category/${product.data.categorySlug}/`}>{product.data.category}</a></p>
+  <p class="sku">SKU: {product.id}</p>
   <Content />
   {product.data.gallery && product.data.gallery.length > 0 && (
     <div>
-      <h2>更多图片</h2>
+      <h2>More Images</h2>
       {product.data.gallery.map((g) => <img src={g} alt={product.data.title} loading="lazy" />)}
     </div>
   )}
-
   <div style="margin-top:2rem;">
-    <a href={waLink} target="_blank" style="
-      display:inline-block; background:#25D366; color:#fff;
-      padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:bold;
-    ">💬 CHAT ON WHATSAPP</a>
+    <a href={waLink} target="_blank" class="btn btn-wa">&#128172; CHAT ON WHATSAPP</a>
   </div>
 </Layout>

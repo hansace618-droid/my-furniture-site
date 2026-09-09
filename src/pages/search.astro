@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Search Products | Tars Home">
+  <h1>Search Products</h1>
+  <p>Type a keyword, e.g. &ldquo;sofa&rdquo;, &ldquo;cabinet&rdquo;, &ldquo;screen&rdquo;...</p>
+  <div id="search"></div>
+</Layout>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" type="module" is:inline></script>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.PagefindUI) {
+      new PagefindUI({ element: '#search', showSubResults: true, translations: { placeholder: 'Search products...' } });
+    }
+  });
+</script>

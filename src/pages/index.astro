@@ -5,22 +5,93 @@ import { getCollection } from 'astro:content';
 const allProducts = await getCollection('products');
 const featured = allProducts.filter((p) => p.data.featured);
 const show = featured.length > 0 ? featured.slice(0, 6) : allProducts.slice(0, 6);
+
+const catSlugs = ['living-room', 'dining-room', 'bedroom', 'study', 'console-hall', 'home-decoration'];
+const catNames = {
+  'living-room': 'Living Room', 'dining-room': 'Dining Room', 'bedroom': 'Bedroom',
+  'study': 'Study', 'console-hall': 'Console & Hall', 'home-decoration': 'Home Decoration',
+};
+const catImage = (slug) => allProducts.find((p) => p.data.categorySlug === slug)?.data.image ?? '/images/products/default.jpg';
 ---
-<Layout title="Tars Home | 首页">
-  <h1>Tars Home</h1>
-  <p>法式中国风家具与家居装饰 · 手工工艺 · 定制服务</p>
-  <h2>精选商品</h2>
-  {show.length > 0 ? (
-    <div class="product-grid">
-      {show.map((p) => (
-        <a class="product-card" href={`/products/${p.id}/`}>
-          <img src={p.data.image} alt={p.data.title} loading="lazy" />
-          <h3>{p.data.title}</h3>
-          <p>{p.data.category}</p>
+<Layout title="Tars Home | Luxury French-Chinese Furniture">
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="banner-slide active" style="background-image:url('/images/banner/banner1.jpg')">
+      <div class="banner-content">
+        <h2>Timeless French Living</h2>
+        <p>Handcrafted French-Chinese furniture with ornate details and refined elegance, for luxurious interiors.</p>
+        <a class="btn btn-light" href="/products/">Explore Collection</a>
+      </div>
+    </div>
+    <div class="banner-slide" style="background-image:url('/images/banner/banner2.jpg')">
+      <div class="banner-content">
+        <h2>Crafted for Generations</h2>
+        <p>Where French heritage meets oriental artistry — bespoke craftsmanship for every living space.</p>
+        <a class="btn btn-light" href="/category/living-room/">View Living Room</a>
+      </div>
+    </div>
+    <div class="banner-dots"><span class="dot active"></span><span class="dot"></span></div>
+  </section>
+  <script is:inline>
+    let bi = 0;
+    const slides = document.querySelectorAll('.banner-slide');
+    const dots = document.querySelectorAll('.dot');
+    if (slides.length > 1) {
+      setInterval(() => {
+        bi = (bi + 1) % slides.length;
+        slides.forEach((s, idx) => s.classList.toggle('active', idx === bi));
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === bi));
+      }, 5000);
+    }
+  </script>
+
+  <!-- Brand intro -->
+  <section class="brand-intro">
+    <h2>Luxury French Furniture &amp; Home D&eacute;cor</h2>
+    <p>Discover Tars Home's world of handcrafted French-Chinese furniture: classic sofas, carved cabinets, hand-painted screens and elegant home decor. Bespoke craftsmanship and custom orders welcome.</p>
+  </section>
+
+  <!-- Category cards -->
+  <section class="section">
+    <h2>Shop by Room</h2>
+    <div class="cat-grid">
+      {catSlugs.map((s) => (
+        <a class="cat-card" href={`/category/${s}/`}>
+          <img src={catImage(s)} alt={catNames[s]} loading="lazy" />
+          <h3>{catNames[s]}</h3>
         </a>
       ))}
     </div>
-  ) : (
-    <p>商品整理中,敬请期待。</p>
-  )}
+  </section>
+
+  <!-- Featured / trending -->
+  <section class="section">
+    <h2>Trending Styles</h2>
+    {show.length > 0 ? (
+      <div class="product-grid">
+        {show.map((p) => (
+          <a class="product-card" href={`/products/${p.id}/`}>
+            <img src={p.data.image} alt={p.data.title} loading="lazy" />
+            <h3>{p.data.title}</h3>
+            <p>{p.data.category}</p>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p>Products coming soon.</p>
+    )}
+    <div class="center"><a class="btn btn-dark" href="/products/">View All Products</a></div>
+  </section>
+
+  <!-- Craftsmanship -->
+  <section class="craft">
+    <div class="craft-img" style="background-image:url('/images/banner/banner2.jpg')"></div>
+    <div class="craft-text">
+      <h2>The Art of French-Chinese Craftsmanship</h2>
+      <p>From intricate carvings to hand-painted scenes, every piece tells a story of classic French elegance reimagined for today's interiors.</p>
+      <a class="btn btn-light" href="https://api.whatsapp.com/send/?phone=8617336031842" target="_blank">&#128172; Chat on WhatsApp</a>
+    </div>
+  </section>
+
 </Layout>

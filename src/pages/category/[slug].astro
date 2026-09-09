@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  const slugs = [...new Set(products.map((p) => p.data.categorySlug))];
+  return slugs.map((s) => ({ params: { slug: s }, props: { slug: s } }));
+}
+
+const { slug } = Astro.props;
+const allProducts = await getCollection('products');
+const items = allProducts.filter((p) => p.data.categorySlug === slug);
+const catName = items[0]?.data.category ?? slug;
+---
+<Layout title={`${catName} | Tars Home`}>
+  <p><a href="/products/">&#8592; Back to all products</a></p>
+  <h1>{catName}</h1>
+  <p>{items.length} piece{items.length > 1 ? 's' : ''}</p>
+  {items.length > 0 ? (
+    <div class="product-grid">
+      {items.map((p) => (
+        <a class="product-card" href={`/products/${p.id}/`}>
+          <img src={p.data.image} alt={p.data.title} loading="lazy" />
+          <h3>{p.data.title}</h3>
+          <p>{p.data.category}</p>
+        </a>
+      ))}
+    </div>
+  ) : (
+    <p>This collection is being curated. Please check back soon.</p>
+  )}
+</Layout>
