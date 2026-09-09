@@ -10,7 +10,7 @@ const allProducts = await getCollection('products');
   {allProducts.length > 0 ? (
     <div class="product-grid">
       {allProducts.map((p) => (
-        <a class="product-card" href={`/products/${p.id}/`}>
+        <a class="product-card" href={`/products/${p.id}/`} target="_blank" rel="noopener">
           <img src={p.data.image} alt={p.data.title} loading="lazy" />
           <h3>{p.data.title}</h3>
           <p>{p.data.category}</p>
