@@ -14,7 +14,7 @@ const items = allProducts.filter((p) => p.data.categorySlug === slug);
 const catName = items[0]?.data.category ?? slug;
 ---
 <Layout title={`${catName} | Tars Home`}>
-  <p><a href="/products/">&#8592; Back to all products</a></p>
+  <p><a href="/products/" target="_blank" rel="noopener">&#8592; Back to all products</a></p>
   <h1>{catName}</h1>
   <p>{items.length} piece{items.length > 1 ? 's' : ''}</p>
   {items.length > 0 ? (

@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 
 const allProducts = await getCollection('products');
 const featured = allProducts.filter((p) => p.data.featured);
-const show = featured.length > 0 ? featured.slice(0, 6) : allProducts.slice(0, 6);
+const show = featured.length > 0 ? featured.slice(0, 8) : allProducts.slice(0, 8);
 
 const catSlugs = ['living-room', 'dining-room', 'bedroom', 'study', 'console-hall', 'home-decoration'];
 const catNames = {
@@ -21,14 +21,14 @@ const catImage = (slug) => `/images/category/${slug}.jpg`;
       <div class="banner-content">
         <h2>Timeless French Living</h2>
         <p>Handcrafted French-Chinese furniture with ornate details and refined elegance, for luxurious interiors.</p>
-        <a class="btn btn-light" href="/products/">Explore Collection</a>
+        <a class="btn btn-light" href="/products/" target="_blank" rel="noopener">Explore Collection</a>
       </div>
     </div>
     <div class="banner-slide" style="background-image:url('/images/banner/banner2.jpg')">
       <div class="banner-content">
         <h2>Crafted for Generations</h2>
         <p>Where French heritage meets oriental artistry — bespoke craftsmanship for every living space.</p>
-        <a class="btn btn-light" href="/category/living-room/">View Living Room</a>
+        <a class="btn btn-light" href="/category/living-room/" target="_blank" rel="noopener">View Living Room</a>
       </div>
     </div>
     <div class="banner-dots"><span class="dot active"></span><span class="dot"></span></div>
@@ -57,7 +57,7 @@ const catImage = (slug) => `/images/category/${slug}.jpg`;
     <h2>Shop by Room</h2>
     <div class="cat-grid">
       {catSlugs.map((s) => (
-        <a class="cat-card" href={`/category/${s}/`}>
+        <a class="cat-card" href={`/category/${s}/`} target="_blank" rel="noopener">
           <img src={catImage(s)} alt={catNames[s]} loading="lazy" />
           <h3>{catNames[s]}</h3>
         </a>
@@ -81,7 +81,7 @@ const catImage = (slug) => `/images/category/${slug}.jpg`;
     ) : (
       <p>Products coming soon.</p>
     )}
-    <div class="center"><a class="btn btn-dark" href="/products/">View All Products</a></div>
+    <div class="center"><a class="btn btn-dark" href="/products/" target="_blank" rel="noopener">View All Products</a></div>
   </section>
 
   <!-- Craftsmanship -->
