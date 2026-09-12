@@ -11,6 +11,23 @@ a:hover { opacity: .8; }
 .logo-img { height: 44px; width: auto; display: block; }
 .nav-links a { color: #e8e0d0; margin-left: 1.4rem; font-size: .95rem; }
 
+/* Mobile nav (hidden on desktop) */
+.mobile-nav { display: none; align-items: center; justify-content: space-between; position: relative; padding: .6rem 1rem; }
+.mobile-nav .mobile-logo { position: absolute; left: 50%; transform: translateX(-50%); }
+.mobile-nav .mobile-logo .logo-img { height: 32px; }
+.hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 10px; background: none; border: 1px solid rgba(232,224,208,.35); border-radius: 6px; cursor: pointer; }
+.hamburger span { display: block; height: 2px; background: #e8e0d0; border-radius: 2px; transition: transform .2s, opacity .2s; }
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.wa-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: #fff; flex: 0 0 auto; }
+.wa-icon svg { width: 22px; height: 22px; fill: currentColor; }
+.mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #1c1a17; border-top: 1px solid rgba(232,224,208,.15); box-shadow: 0 10px 24px rgba(0,0,0,.35); flex-direction: column; padding: .6rem 0 1rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: #e8e0d0; padding: .85rem 1.5rem; font-size: 1rem; border-bottom: 1px solid rgba(232,224,208,.08); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { background: rgba(255,255,255,.06); }
+
 main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 3rem; min-height: 60vh; }
 h1 { margin-bottom: .5rem; color: #1c1a17; }
 h2 { margin: 1.5rem 0 .8rem; color: #1c1a17; }
@@ -65,7 +82,8 @@ p { margin-bottom: .8rem; }
 
 @media (max-width: 768px) {
   .banner { height: 340px; }
-  .nav-links a { margin-left: .8rem; font-size: .85rem; }
+  .nav { display: none; }
+  .mobile-nav { display: flex; }
   .craft { grid-template-columns: 1fr; }
   .product-card img { height: auto; }
   .cat-grid { grid-template-columns: 1fr; }
