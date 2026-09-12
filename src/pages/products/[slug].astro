@@ -26,7 +26,7 @@ const galleryImgs = [product.data.image, ...(product.data.gallery || [])].filter
   <p><a href="/products/" target="_blank" rel="noopener">&#8592; Back to all products</a></p>
 
   <div class="gallery-wrap">
-    <img id="galleryMain" class="gallery-main" src={galleryImgs[0]} alt={product.data.title} />
+    <img id="galleryMain" class="gallery-main" src={galleryImgs[0]} alt={product.data.title} data-pagefind-meta="image[src]" />
     {galleryImgs.length > 1 && (
       <div class="gallery-thumbs">
         {galleryImgs.map((g, i) => (

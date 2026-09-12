@@ -11,7 +11,42 @@ import Layout from '../layouts/Layout.astro';
 <script is:inline>
   window.addEventListener('DOMContentLoaded', () => {
     if (window.PagefindUI) {
-      new PagefindUI({ element: '#search', showSubResults: true, translations: { placeholder: 'Search products...' } });
+      new PagefindUI({
+        element: '#search',
+        showSubResults: true,
+        translations: { placeholder: 'Search products...' },
+        processResult: (result) => {
+          // 兜底:若 Pagefind 索引未采集到图片,从结果 URL 推断
+          // /products/sofa123/ -> /images/products/sofa123.jpg
+          if (!result.meta || !result.meta.image) {
+            const m = String(result.url || '').match(/\/products\/([^/]+)\/?$/);
+            if (m) {
+              result.meta = result.meta || {};
+              result.meta.image = '/images/products/' + m[1] + '.jpg';
+            }
+          }
+          return result;
+        },
+      });
+      // 搜索结果链接新标签打开
+      const fixLinks = () => {
+        document.querySelectorAll('.pagefind-ui__result-link').forEach((a) => {
+          if (!a.hasAttribute('target')) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener');
+          }
+        });
+      };
+      const observer = new MutationObserver(fixLinks);
+      observer.observe(document.getElementById('search'), { childList: true, subtree: true });
+      fixLinks();
     }
   });
 </script>
+<style is:global>
+  /* 搜索结果图片样式,与站点视觉统一 */
+  .pagefind-ui__result-image {
+    object-fit: cover;
+    background: #faf7f1;
+  }
+</style>
