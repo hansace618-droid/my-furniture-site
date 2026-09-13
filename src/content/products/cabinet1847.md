@@ -1,5 +1,5 @@
 ---
-title: "French-Chinese Style Decorative Cabinet"
+title: "Chinoiserie Decorative Cabinet"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/cabinet1847-1.jpg"
@@ -9,4 +9,4 @@ gallery:
   - "/images/products/cabinet1847-2.jpg"
   - "/images/products/cabinet1847-3.jpg"
 ---
-French-Chinese Style Decorative Cabinet &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Chinoiserie Decorative Cabinet &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

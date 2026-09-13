@@ -1,8 +1,8 @@
 ---
-title: "Gilded Hand-Painted French-Chinese Style Coffee Table"
+title: "Gilded Hand-Painted Chinoiserie Coffee Table"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/coffeetable1870.jpg"
 featured: false
 ---
-Gilded Hand-Painted French-Chinese Style Coffee Table &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Gilded Hand-Painted Chinoiserie Coffee Table &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

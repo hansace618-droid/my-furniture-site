@@ -1,5 +1,5 @@
 ---
-title: "French-Chinese Style Coffee Table"
+title: "Chinoiserie Coffee Table"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/coffeetable2098.jpg"

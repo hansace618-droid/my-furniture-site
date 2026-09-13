@@ -1,8 +1,8 @@
 ---
-title: "French-Chinese Style Entryway Cabinet"
+title: "Chinoiserie Entryway Cabinet"
 category: "Console&Hall"
 categorySlug: "console-hall"
 image: "/images/products/cabinet2278.jpg"
 featured: false
 ---
-French-Chinese Style Entryway Cabinet &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Chinoiserie Entryway Cabinet &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

@@ -9,4 +9,4 @@ gallery:
   - "/images/products/armoire2172-2.jpg"
   - "/images/products/armoire2172-3.jpg"
 ---
-Four-Door Wine Cabinet &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Four-Door Wine Cabinet &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

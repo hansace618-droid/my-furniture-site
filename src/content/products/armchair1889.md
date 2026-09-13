@@ -1,8 +1,8 @@
 ---
-title: "Gilded Hand-Painted French-Chinese Style Armchair"
+title: "Gilded Hand-Painted Chinoiserie Armchair"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/armchair1889.jpg"
 featured: false
 ---
-Gilded Hand-Painted French-Chinese Style Armchair &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Gilded Hand-Painted Chinoiserie Armchair &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

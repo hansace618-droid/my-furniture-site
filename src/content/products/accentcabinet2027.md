@@ -1,5 +1,5 @@
 ---
-title: "French-Chinese Style Curio Cabinet"
+title: "Chinoiserie Curio Cabinet"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/accentcabinet2027.jpg"

@@ -1,8 +1,8 @@
 ---
-title: "Gilded Hand-Painted French-Chinese Style Nightstand"
+title: "Gilded Hand-Painted Chinoiserie Nightstand"
 category: "Bedroom"
 categorySlug: "bedroom"
 image: "/images/products/nightstand1895.jpg"
 featured: false
 ---
-Gilded Hand-Painted French-Chinese Style Nightstand &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Gilded Hand-Painted Chinoiserie Nightstand &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

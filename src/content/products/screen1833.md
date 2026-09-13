@@ -1,8 +1,8 @@
 ---
-title: "French-Chinese Style Hand-Painted Screen"
+title: "Chinoiserie Hand-Painted Screen"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/screen1833.jpg"
 featured: false
 ---
-French-Chinese Style Hand-Painted Screen &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the French-Chinese living aesthetic.
+Chinoiserie Hand-Painted Screen &mdash; hand-crafted with fine detailing and timeless elegance, a signature piece of the Chinoiserie living aesthetic.

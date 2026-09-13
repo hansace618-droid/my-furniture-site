@@ -1,8 +1,8 @@
 ---
-title: "French-Chinese Style Tea Chair"
+title: "Chinoiserie Tea Chair"
 category: "Living Room"
 categorySlug: "living-room"
 image: "/images/products/teachair1996.jpg"
 featured: false
 ---
-Hand-painted French-Chinese style tea chair, crafted with refined detailing for graceful tea-time seating.
+Hand-painted Chinoiserie tea chair, crafted with refined detailing for graceful tea-time seating.
