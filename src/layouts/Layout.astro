@@ -4,7 +4,6 @@ interface Props {
 }
 const { title } = Astro.props;
 const phone = '8617336031842';
-const email = 'sales@tarshome.com';
 ---
 <!doctype html>
 <html lang="en">
@@ -76,7 +75,7 @@ const email = 'sales@tarshome.com';
         <div>
           <h4>Contact</h4>
           <a href={`https://api.whatsapp.com/send/?phone=${phone}`} target="_blank">WhatsApp Us</a>
-          <a href={`mailto:${email}`}>sales@tarshome.com</a>
+          <a href="#" data-mail-user="sales" data-mail-host="tarshome.com">Email Us</a>
           <p>Worldwide shipping available</p>
         </div>
       </div>
@@ -97,6 +96,16 @@ const email = 'sales@tarshome.com';
             toggle.setAttribute('aria-expanded', 'false');
           });
         });
+        // Mailto links: assemble address from data attributes to hide it from scrapers
+        var mailLinks = document.querySelectorAll('[data-mail-user][data-mail-host]');
+        for (var i = 0; i < mailLinks.length; i++) {
+          var el = mailLinks[i];
+          var addr = el.getAttribute('data-mail-user') + '@' + el.getAttribute('data-mail-host');
+          el.setAttribute('href', 'mailto:' + addr);
+          if (el.getAttribute('data-mail-text') !== 'false') {
+            el.textContent = addr;
+          }
+        }
       })();
     </script>
   </body>
