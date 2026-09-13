@@ -48,8 +48,9 @@ const galleryImgs = [product.data.image, ...(product.data.gallery || [])].filter
   <p>Category: <a href={`/category/${product.data.categorySlug}/`} target="_blank" rel="noopener">{product.data.category}</a></p>
   <p class="sku">SKU: {product.id}</p>
   <Content />
-  <div style="margin-top:2rem;">
-    <a href={waLink} target="_blank" class="btn btn-wa">&#128172; CHAT ON WHATSAPP</a>
+  <div style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+    <a href={waLink} target="_blank" class="btn btn-wa" style="margin-top:0;">&#128172; CHAT ON WHATSAPP</a>
+    <a href="mailto:sales@tarshome.com" class="btn btn-dark" style="margin-top:0;">&#9993; EMAIL US</a>
   </div>
 </Layout>
 

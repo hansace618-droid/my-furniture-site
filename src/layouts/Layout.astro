@@ -4,6 +4,7 @@ interface Props {
 }
 const { title } = Astro.props;
 const phone = '8617336031842';
+const email = 'sales@tarshome.com';
 ---
 <!doctype html>
 <html lang="en">
@@ -75,6 +76,7 @@ const phone = '8617336031842';
         <div>
           <h4>Contact</h4>
           <a href={`https://api.whatsapp.com/send/?phone=${phone}`} target="_blank">WhatsApp Us</a>
+          <a href={`mailto:${email}`}>sales@tarshome.com</a>
           <p>Worldwide shipping available</p>
         </div>
       </div>
